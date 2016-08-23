@@ -1,0 +1,6 @@
+{
+  "private": true,
+  "main": "electron.main.js",
+  "dependencies": {
+  }
+}
