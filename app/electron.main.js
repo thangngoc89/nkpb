@@ -1,44 +1,49 @@
-const electron = require('electron');
+// No destruct here https://github.com/electron/electron/issues/5897
+// const { app, BrowserWindow, shell, screen } = require('electron');
+const electron = require('electron')
+const windowStateKeeper = require('electron-window-state')
 
-const app = electron.app;
-const BrowserWindow = electron.BrowserWindow;
+const app = electron.app
+const BrowserWindow = electron.BrowserWindow
 
-let mainWindow;
+let mainWindow
 
-function createWindow() {
-  mainWindow = new BrowserWindow({ width: 800, height: 600 });
-  mainWindow.loadURL(`file://${__dirname}/index.html`);
+app.on('window-all-closed', () => {
+  if (process.platform !== 'darwin') app.quit()
+})
 
-  if (process.env.NODE_ENV === 'development') {
-    mainWindow.webContents.openDevTools();
-  }
+app.on('ready', () => {
+  const { workAreaSize } = electron.screen.getPrimaryDisplay()
+
+  const mainWindowState = windowStateKeeper({
+    defaultWidth: workAreaSize.width * 0.8,
+    defaultHeight: workAreaSize.height * 0.8,
+  })
+
+  const browserWindowOptions = Object.assign({
+    resizable: true,
+    title: 'Photon Media',
+    center: true,
+    frame: false,
+    show: false,
+    minWidth: 768,
+    minHeight: 468,
+  }, mainWindowState)
+
+  mainWindow = new BrowserWindow(browserWindowOptions)
+
+  mainWindow.loadURL(`file://${__dirname}/index.html`)
+
+  mainWindow.webContents.on('did-finish-load', () => {
+    mainWindow.show()
+    mainWindow.focus()
+  })
 
   mainWindow.on('closed', () => {
-    // Dereference the window object, usually you would store windows
-    // in an array if your app supports multi windows, this is the time
-    // when you should delete the corresponding element.
-    mainWindow = null;
-  });
-}
+    mainWindow = null
+  })
 
-// This method will be called when Electron has finished
-// initialization and is ready to create browser windows.
-// Some APIs can only be used after this event occurs.
-app.on('ready', createWindow);
-
-// Quit when all windows are closed.
-app.on('window-all-closed', () => {
-  // On OS X it is common for applications and their menu bar
-  // to stay active until the user quits explicitly with Cmd + Q
-  if (process.platform !== 'darwin') {
-    app.quit();
+  if (process.env.NODE_ENV === 'development') {
+    mainWindow.openDevTools()
   }
-});
-
-app.on('activate', () => {
-  // On OS X it's common to re-create a window in the app when the
-  // dock icon is clicked and there are no other windows open.
-  if (mainWindow === null) {
-    createWindow();
-  }
-});
+})

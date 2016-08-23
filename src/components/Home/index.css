@@ -1,0 +1,121 @@
+:root {
+  --sidebarSize: 300px;
+}
+
+.settings {
+  width: 100vw;
+  left: 0;
+  height: 100vh;
+  top: 0;
+  position: absolute;
+}
+
+.backContainer {
+  position: absolute;
+}
+
+.back {
+  float: left;
+  margin-top: 60px;
+  margin-left: 40px;
+  color: #fff;
+  cursor: pointer;
+  width: 38px;
+  z-index: 1;
+  padding: 0;
+}
+
+.titleContainer {
+  margin: 60px 40px 20px 40px;
+  width: 100%;
+  height: calc(100% - 60px - 20px);
+}
+
+.title {
+  font-size: 34px;
+  font-weight: 400;
+  color: #fff;
+  z-index: 1;
+  position: absolute;
+  line-height: 40px;
+  margin-left: 52px;
+}
+
+.panel-container {
+  width: 100vw;
+  left: 0;
+  height: 100vh;
+  top: 0;
+  position: absolute;
+  box-sizing: border-box;
+}
+
+.left-panel {
+  width: var(--sidebarSize);
+  height: 100%;
+  background-color: #3f51b5;
+  float: left;
+
+  & paper-item {
+    padding: 0 0 0 50px;
+    display: flex;
+    justify-content: flex-start;
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.1);
+    }
+  }
+}
+
+.icon {
+  margin-right: 20px;
+}
+
+.settings .settings-tab-container {
+  margin-top: 120px;
+  position: relative;
+  background-color: transparent;
+  color: #fff;
+}
+
+.setting-tab {
+  font-size: 18px;
+  font-weight: 300;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  position: relative;
+  text-align: right;
+  cursor: pointer;
+  height: 50px;
+  text-transform: uppercase;
+  line-height: 25px;
+}
+
+.right-panel {
+  width: calc(100% - var(--sidebarSize));
+  height: 100%;
+  float: right;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-top: 80px;
+  box-sizing: border-box;
+
+  & h2 {
+    font-size: 24px;
+    font-weight: 600;
+    padding: 20px 0;
+  }
+
+  & paper-checkbox {
+    margin: 8px 0;
+    width: 50%;
+    min-width: 355px;
+  }
+}
+
+.setting-inner {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  max-width: 850px;
+}

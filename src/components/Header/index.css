@@ -1,0 +1,22 @@
+.header {
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  width: 100vw;
+  height: 32px;
+  -webkit-user-select: none;
+  -webkit-app-region: drag;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.header a {
+  z-index: 1000;
+}
+
+.title {
+  width: 100vw;
+  display: block;
+  top: 10px;
+  position: absolute;
+  text-align: center;
+}

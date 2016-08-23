@@ -1,15 +1,31 @@
-import React from 'react';
-import { Provider } from 'react-redux';
-import { Router } from 'react-router';
+import React, { PropTypes } from 'react'
+import { Provider } from 'react-redux'
+import { Router } from 'react-router'
 
-import store from './core/store';
-import history from './core/history';
-import routes from './routes';
+import history from './core/history'
+import routes from './routes'
 
-const App = () => (
+const App = ({ store }) => (
   <Provider store={store}>
-    <Router history={history} routes={routes} />
-  </Provider>
-);
+    <div>
+      <Router history={history} routes={routes} />
+      {
+        (() => {
+          if (process.env.NODE_ENV !== 'production') {
+             // eslint-disable-next-line global-require
+            const DevTools = require('./containers/DevTools').default
 
-export default App;
+            return <DevTools />
+          }
+          return null
+        })()
+      }
+    </div>
+  </Provider>
+)
+
+App.propTypes = {
+  store: PropTypes.object.isRequired,
+}
+
+export default App

@@ -22,6 +22,6 @@ const config = {
     branch: 'gh-pages',
   },
 
-};
+}
 
-module.exports = config;
+module.exports = config

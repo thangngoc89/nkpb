@@ -7,6 +7,6 @@
  * LICENSE.txt file in the root directory of this source tree.
  */
 
-import Error from './Error';
+import Error from './Error'
 
-export default Error;
+export default Error
