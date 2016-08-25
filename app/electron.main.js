@@ -6,7 +6,7 @@ const windowStateKeeper = require('electron-window-state')
 const app = electron.app
 const BrowserWindow = electron.BrowserWindow
 
-let mainWindow
+let mainWindow = null
 
 app.on('window-all-closed', () => {
   if (process.platform !== 'darwin') app.quit()
@@ -30,20 +30,22 @@ app.on('ready', () => {
     minHeight: 468,
   }, mainWindowState)
 
-  mainWindow = new BrowserWindow(browserWindowOptions)
+  if (!mainWindow) {
+    mainWindow = new BrowserWindow(browserWindowOptions)
 
-  mainWindow.loadURL(`file://${__dirname}/index.html`)
+    mainWindow.loadURL(`file://${__dirname}/index.html`)
 
-  mainWindow.webContents.on('did-finish-load', () => {
-    mainWindow.show()
-    mainWindow.focus()
-  })
+    mainWindow.webContents.on('did-finish-load', () => {
+      mainWindow.show()
+      mainWindow.focus()
+    })
 
-  mainWindow.on('closed', () => {
-    mainWindow = null
-  })
+    mainWindow.on('closed', () => {
+      mainWindow = null
+    })
 
-  if (process.env.NODE_ENV === 'development') {
-    mainWindow.openDevTools()
+    if (process.env.NODE_ENV === 'development') {
+      mainWindow.openDevTools()
+    }
   }
 })

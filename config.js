@@ -5,7 +5,7 @@ const config = {
   webpack: (wpConfig) => {
     // Add resolve path for react-polymer
     wpConfig.module.loaders[0].include.push(
-      path.resolve(process.cwd(), './node_modules/react-polymer'),
+      path.resolve(process.cwd(), './node_modules/react-polymer')
     )
   },
 }

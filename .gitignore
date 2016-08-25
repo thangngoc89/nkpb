@@ -10,4 +10,4 @@ node_modules
 npm-debug.log
 
 # bower
-bower_components
+app/bower_components
