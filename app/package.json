@@ -1,6 +1,13 @@
 {
   "private": true,
+  "name": "dental-management",
+  "version": "0.0.0",
+  "description": "Dental clinic management system from Khoa Nguyen",
+  "author": "Khoa Nguyen <hi@khoanguyen.me> (https://khoanguyen.me)",
+  "homepage": "https://github.com/thangngoc89/nkpb",
+  "repository": "https://github.com/thangngoc89/nkpb",
   "main": "electron.main.js",
   "dependencies": {
+    "electron-window-state": "^3.0.4"
   }
 }

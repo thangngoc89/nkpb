@@ -3,6 +3,7 @@
 
 # Compiled output
 app/dist
+dist
 
 # Node.js and NPM
 node_modules
