@@ -11,7 +11,6 @@ export const MINIMIZE = '@@window/MINIMIZE'
 // ------------------------------------
 // Actions
 // ------------------------------------
-// TODO: Use redux-thunk
 
 export const maximize = () => ({ type: MAXIMIZE })
 
@@ -82,7 +81,7 @@ const initialState = {
   isClosed: false,
 }
 
-export default function counterReducer(state = initialState, action) {
+export default function reducer(state = initialState, action) {
   const handler = ACTION_HANDLERS[action.type]
 
   return handler ? handler(state, action) : state
