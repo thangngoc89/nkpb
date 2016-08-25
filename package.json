@@ -28,10 +28,11 @@
     "redux-logger": "^2.6.1"
   },
   "build": {
-    "appId": "me.khoanguyen.dental-management",
+    "appId": "me.khoanguyen.dental_management",
     "app-category-type": "public.app-category.productivity",
     "win": {
-      "iconUrl": "https://cdn.rawgit.com/thangngoc89/electron-react-app/aed72ef0fc454ddd5a8a3f992817dc15f3c98430/templates/build/icon.ico"
+      "iconUrl": "https://cdn.rawgit.com/thangngoc89/electron-react-app/aed72ef0fc454ddd5a8a3f992817dc15f3c98430/templates/build/icon.ico",
+      "msi": true
     }
   },
   "babel": {
