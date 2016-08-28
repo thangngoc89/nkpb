@@ -46,35 +46,6 @@
       "transform-runtime"
     ]
   },
-  "eslintConfig": {
-    "parser": "babel-eslint",
-    "extends": "airbnb",
-    "env": {
-      "browser": true
-    },
-    "rules": {
-      "semi": [
-        2,
-        "never"
-      ],
-      "import/no-extraneous-dependencies": [
-        "error",
-        {
-          "devDependencies": true,
-          "optionalDependencies": false,
-          "peerDependencies": false
-        }
-      ],
-      "react/jsx-filename-extension": [
-        1,
-        {
-          "extensions": [
-            ".js"
-          ]
-        }
-      ]
-    }
-  },
   "scripts": {
     "postinstall": "install-app-deps && npm run clean:cache",
     "start": "electron-react-app start",
