@@ -52,8 +52,8 @@
   "scripts": {
     "postinstall": "install-app-deps && npm run clean:cache",
     "start": "electron-react-app start",
-    "lint": "eslint src app",
-    "lint:fix": "eslint --fix src app",
+    "lint": "eslint --ignore-path .gitignore src app",
+    "lint:fix": "eslint  --ignore-path .gitignore --fix src app",
     "clean:cache": "electron-react-app clean-cache",
     "compile": "electron-react-app compile",
     "pack": "npm run compile && build --dir",

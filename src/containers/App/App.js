@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react'
-import Header from './Header'
+import Header from '../Header'
 import './reset.css'
 import styles from './App.css'
 

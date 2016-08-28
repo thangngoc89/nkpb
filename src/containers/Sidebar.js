@@ -1,10 +1,9 @@
 import React, { PropTypes } from 'react'
-// import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
-// import { actions as HeaderActions } from '../redux/modules/header'
 import { Link } from 'react-router'
-import styles from './Sidebar.css'
 import cx from 'classnames'
+import styles from './Sidebar.css'
+
 
 const List = ({ list }) => {
   const tabStyles = `
