@@ -46,6 +46,9 @@
       "transform-runtime"
     ]
   },
+  "jest": {
+    "automock": false
+  },
   "scripts": {
     "postinstall": "install-app-deps && npm run clean:cache",
     "start": "electron-react-app start",
