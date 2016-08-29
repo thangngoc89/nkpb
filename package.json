@@ -22,6 +22,8 @@
     "electron-builder": "^5.30.0",
     "electron-react-app": "0.0.2",
     "electron-react-app-scripts": "^0.0.7",
+    "jest-css-modules": "^1.0.2",
+    "react-test-renderer": "^15.3.1",
     "redux-devtools": "^3.3.1",
     "redux-devtools-dock-monitor": "^1.1.1",
     "redux-devtools-log-monitor": "^1.0.11",
@@ -46,44 +48,20 @@
       "transform-runtime"
     ]
   },
-  "eslintConfig": {
-    "parser": "babel-eslint",
-    "extends": "airbnb",
-    "env": {
-      "browser": true
-    },
-    "rules": {
-      "semi": [
-        2,
-        "never"
-      ],
-      "import/no-extraneous-dependencies": [
-        "error",
-        {
-          "devDependencies": true,
-          "optionalDependencies": false,
-          "peerDependencies": false
-        }
-      ],
-      "react/jsx-filename-extension": [
-        1,
-        {
-          "extensions": [
-            ".js"
-          ]
-        }
-      ]
-    }
+  "jest": {
+    "automock": false,
+    "moduleNameMapper": { "^.*[.](css)$": "<rootDir>/helpers/EmptyModule.js" }
   },
   "scripts": {
     "postinstall": "install-app-deps && npm run clean:cache",
     "start": "electron-react-app start",
-    "lint": "eslint src app",
-    "lint:fix": "eslint --fix src app",
+    "lint": "eslint --ignore-path .gitignore src app",
+    "lint:fix": "eslint  --ignore-path .gitignore --fix src app",
     "clean:cache": "electron-react-app clean-cache",
     "compile": "electron-react-app compile",
     "pack": "npm run compile && build --dir",
     "dist": "npm run compile && build",
-    "release": "npm run compile && build"
+    "release": "npm run compile && build",
+    "test": "jest"
   }
 }
