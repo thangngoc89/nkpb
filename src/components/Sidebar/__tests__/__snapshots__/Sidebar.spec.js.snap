@@ -56,6 +56,133 @@ exports[`Sidebar should not require children to render 1`] = `
 </div>
 `;
 
+exports[`Sidebar should render 1 element as a child 1`] = `
+<div
+  className={undefined}>
+  <div
+    className={undefined}>
+    <h1
+      className="undefined">
+      Phước Bình
+    </h1>
+  </div>
+  <div
+    className={undefined}>
+    <div
+      className={undefined}>
+      <style
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "
+              .paper-item-0 {
+                --paper-item-selected-weight: 300 !important;
+                --paper-item-selected: {
+                  background: rgba(0, 0, 0, 0.3);
+                }
+                --paper-item-focused-before: {
+                  opacity: 0;
+                }
+              };
+            "
+          }
+        }
+        is="custom-style" />
+      <paper-listbox>
+        <paper-item>
+          <iron-icon
+            icon="social:person" />
+          Khách hàng
+          <paper-ripple />
+        </paper-item>
+        <paper-item>
+          <iron-icon
+            icon="device:widgets" />
+          Plugins
+          <paper-ripple />
+        </paper-item>
+        <paper-item>
+          <iron-icon
+            icon="info-outline" />
+          About
+          <paper-ripple />
+        </paper-item>
+      </paper-listbox>
+    </div>
+    <div
+      className={undefined}>
+      <p>
+        Whatever
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Sidebar should render multi elements as children 1`] = `
+<div
+  className={undefined}>
+  <div
+    className={undefined}>
+    <h1
+      className="undefined">
+      Phước Bình
+    </h1>
+  </div>
+  <div
+    className={undefined}>
+    <div
+      className={undefined}>
+      <style
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "
+              .paper-item-0 {
+                --paper-item-selected-weight: 300 !important;
+                --paper-item-selected: {
+                  background: rgba(0, 0, 0, 0.3);
+                }
+                --paper-item-focused-before: {
+                  opacity: 0;
+                }
+              };
+            "
+          }
+        }
+        is="custom-style" />
+      <paper-listbox>
+        <paper-item>
+          <iron-icon
+            icon="social:person" />
+          Khách hàng
+          <paper-ripple />
+        </paper-item>
+        <paper-item>
+          <iron-icon
+            icon="device:widgets" />
+          Plugins
+          <paper-ripple />
+        </paper-item>
+        <paper-item>
+          <iron-icon
+            icon="info-outline" />
+          About
+          <paper-ripple />
+        </paper-item>
+      </paper-listbox>
+    </div>
+    <div
+      className={undefined}>
+      <p>
+        Whatever
+      </p>
+      <p>
+        So cool
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Sidebar should render with icon 1`] = `
 <div
   className={undefined}>

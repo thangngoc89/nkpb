@@ -58,4 +58,27 @@ describe('Sidebar', () => {
     const tree = component.toJSON()
     expect(tree).toMatchSnapshot()
   })
+
+  it('should render 1 element as a child', () => {
+    const component = renderer.create(
+      <Sidebar {...props}>
+        <p>Whatever</p>
+      </Sidebar>
+    )
+
+    const tree = component.toJSON()
+    expect(tree).toMatchSnapshot()
+  })
+
+  it('should render multi elements as children', () => {
+    const component = renderer.create(
+      <Sidebar {...props}>
+        <p>Whatever</p>
+        <p>So cool</p>
+      </Sidebar>
+    )
+
+    const tree = component.toJSON()
+    expect(tree).toMatchSnapshot()
+  })
 })
