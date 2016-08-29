@@ -71,7 +71,10 @@ Sidebar.propTypes = {
   title: PropTypes.string.isRequired,
   icon: PropTypes.object.isRequired,
   list: PropTypes.array.isRequired,
-  children: PropTypes.arrayOf(PropTypes.element).isRequired,
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.element),
+    PropTypes.element,
+  ])
 }
 
 export default Sidebar

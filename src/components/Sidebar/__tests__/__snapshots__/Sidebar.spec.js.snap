@@ -1,4 +1,4 @@
-exports[`Sidebar render correctly 1`] = `
+exports[`Sidebar should not require children to render 1`] = `
 <div
   className={undefined}>
   <a

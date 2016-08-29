@@ -1,4 +1,3 @@
-// Link.react-test.js
 import React from 'react'
 import renderer from 'react-test-renderer'
 import Sidebar from '../Sidebar.js'
@@ -27,7 +26,7 @@ const props = {
 }
 
 describe('Sidebar', () => {
-  it('render correctly', () => {
+  it('should not require children to render', () => {
     const component = renderer.create(
       <Sidebar {...props} />
     )
