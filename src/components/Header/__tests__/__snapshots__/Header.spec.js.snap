@@ -128,7 +128,7 @@ exports[`Header render with custom backgrund and theme 1`] = `
       </a>
       <a
         data-radium={true}
-        onClick={undefined}
+        onClick={[Function noop]}
         onKeyDown={[Function anonymous]}
         onKeyUp={[Function anonymous]}
         onMouseDown={[Function anonymous]}
@@ -300,7 +300,7 @@ exports[`Header render with default props 1`] = `
       </a>
       <a
         data-radium={true}
-        onClick={undefined}
+        onClick={[Function noop]}
         onKeyDown={[Function anonymous]}
         onKeyUp={[Function anonymous]}
         onMouseDown={[Function anonymous]}
