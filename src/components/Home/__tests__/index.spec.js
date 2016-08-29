@@ -1,6 +1,10 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
-import Home from '../Home'
+
+jest.mock('../../../containers/Sidebar')
+jest.mock('../index.css')
+
+const Home = require('../Home').default
 
 describe('Home', () => {
   it('should render', () => {
