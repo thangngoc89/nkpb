@@ -3,7 +3,6 @@ import { Link } from 'react-router'
 import cx from 'classnames'
 import styles from './Sidebar.css'
 
-
 const List = ({ list }) => {
   const tabStyles = `
     .paper-item-0 {
