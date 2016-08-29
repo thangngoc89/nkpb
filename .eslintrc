@@ -2,13 +2,12 @@
     "parser": "babel-eslint",
     "extends": "airbnb",
     "env": {
-      "browser": true
+      "browser": true,
+      "jest": true
     },
     "rules": {
-      "semi": [
-        2,
-        "never"
-      ],
+      "semi": [2, "never"],
+      "import/no-named-as-default": 0,
       "import/no-extraneous-dependencies": [
         "error",
         {
