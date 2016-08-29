@@ -33,4 +33,29 @@ describe('Sidebar', () => {
     const tree = component.toJSON()
     expect(tree).toMatchSnapshot()
   })
+
+  it('should render with no icon', () => {
+    const component = renderer.create(
+      <Sidebar {...props} />
+    )
+    const tree = component.toJSON()
+    expect(tree).toMatchSnapshot()
+  })
+
+  it('should render with icon', () => {
+    const newProps = {
+      ...props,
+      icon: {
+        ...props.icon,
+        display: true,
+      },
+    }
+
+    const component = renderer.create(
+      <Sidebar {...newProps} />
+    )
+
+    const tree = component.toJSON()
+    expect(tree).toMatchSnapshot()
+  })
 })

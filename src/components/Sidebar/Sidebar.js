@@ -40,14 +40,12 @@ List.propTypes = {
 
 const Sidebar = ({ title, icon, list, children }) => (
   <div className={styles.wrap}>
-    <Link
-      to="/"
-      className={cx(styles.iconWrap, {
-        [styles.hide]: !icon.display,
-      })}
-    >
-      <paper-icon-button className={styles.icon} icon={icon.icon} />
-    </Link>
+    {
+      icon.display &&
+        <Link to="/" className={styles.iconWrap}>
+          <paper-icon-button className={styles.icon} icon={icon.icon} />
+        </Link>
+    }
     <div className={styles.titleWrap}>
       <h1
         className={cx(styles.title, {
@@ -74,7 +72,7 @@ Sidebar.propTypes = {
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.element),
     PropTypes.element,
-  ])
+  ]),
 }
 
 export default Sidebar
