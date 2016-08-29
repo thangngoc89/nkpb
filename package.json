@@ -49,8 +49,7 @@
     ]
   },
   "jest": {
-    "automock": false,
-    "scriptPreprocessor": "<rootDir>/node_modules/jest-css-modules"
+    "automock": false
   },
   "scripts": {
     "postinstall": "install-app-deps && npm run clean:cache",
